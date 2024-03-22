@@ -15,3 +15,15 @@ class CustomException(Exception):
 
     def __str__(self):
         return self.error_message
+
+
+
+
+"""The below code is for checking, is the above code working fine or not"""
+
+if __name__=="__main__":
+    try:
+        a = 1/0
+    except Exception as e:
+        logging.info("Zero division error")
+        raise CustomException(e,sys)
